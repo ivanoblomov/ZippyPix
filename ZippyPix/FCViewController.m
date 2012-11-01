@@ -14,16 +14,39 @@
 
 @implementation FCViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+#pragma mark - Camera
+
+- (IBAction)showCameraUI {
+    [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (BOOL)startCameraControllerFromViewController:(UIViewController*) controller
+                                   usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO)
+        || (delegate == nil)
+        || (controller == nil))
+        return NO;
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    cameraUI.allowsEditing = NO;
+    cameraUI.delegate = delegate;
+    cameraUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [controller presentModalViewController:cameraUI animated:NO];
+    return YES;
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self showCameraUI];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
