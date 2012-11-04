@@ -24,6 +24,7 @@
 		9C1A477816427FE000572102 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A475016427FE000572102 /* Foundation.framework */; };
 		9C1A478016427FE000572102 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A477E16427FE000572102 /* InfoPlist.strings */; };
 		9C1A478316427FE000572102 /* ZippyPixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A478216427FE000572102 /* ZippyPixTests.m */; };
+		9CA892B61646CB6D00E802CD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		9C1A477F16427FE000572102 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C1A478116427FE000572102 /* ZippyPixTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZippyPixTests.h; sourceTree = "<group>"; };
 		9C1A478216427FE000572102 /* ZippyPixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZippyPixTests.m; sourceTree = "<group>"; };
+		9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +69,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C1A474F16427FE000572102 /* UIKit.framework in Frameworks */,
-				9C1A475116427FE000572102 /* Foundation.framework in Frameworks */,
 				9C1A475316427FE000572102 /* CoreGraphics.framework in Frameworks */,
+				9C1A475116427FE000572102 /* Foundation.framework in Frameworks */,
+				9CA892B61646CB6D00E802CD /* MobileCoreServices.framework in Frameworks */,
+				9C1A474F16427FE000572102 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 		9C1A473F16427FE000572102 = {
 			isa = PBXGroup;
 			children = (
+				9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */,
 				9C1A475416427FE000572102 /* ZippyPix */,
 				9C1A477B16427FE000572102 /* ZippyPixTests */,
 				9C1A474D16427FE000572102 /* Frameworks */,
@@ -461,6 +465,7 @@
 				9C1A478816427FE000572102 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C1A478916427FE000572102 /* Build configuration list for PBXNativeTarget "ZippyPixTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				9C1A478B16427FE000572102 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

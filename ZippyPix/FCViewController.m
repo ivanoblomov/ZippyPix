@@ -20,7 +20,7 @@
     [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
-- (BOOL)startCameraControllerFromViewController:(UIViewController*) controller
+- (BOOL)startCameraControllerFromViewController:(UIViewController*)controller
                                    usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
     if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO)
         || (delegate == nil)
@@ -33,6 +33,33 @@
     cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
     [controller presentModalViewController:cameraUI animated:NO];
     return YES;
+}
+
+#pragma mark - Image picker
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage;
+
+    // Handle still image
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
+        editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImageWriteToSavedPhotosAlbum ((editedImage) ? editedImage : originalImage, nil, nil , nil);
+    }
+
+    // Handle movie
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
+        NSString *moviePath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
+        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath))
+            UISaveVideoAtPathToSavedPhotosAlbum(moviePath, nil, nil, nil);
+    }
+
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - View lifecycle

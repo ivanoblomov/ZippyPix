@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Roderick Monje. All rights reserved.
 //
 
+#import <MobileCoreServices/UTCoreTypes.h>
 #import <UIKit/UIKit.h>
 
 @interface FCViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
