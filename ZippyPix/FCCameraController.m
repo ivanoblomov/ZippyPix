@@ -32,6 +32,7 @@
     cameraUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
     cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
     [controller presentModalViewController:cameraUI animated:NO];
+    isShowingCamera = YES;
     return YES;
 }
 
@@ -59,7 +60,15 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissModalViewControllerAnimated:YES];
+    if (isShowingCamera) {
+        picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    } else {
+        picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+
+    isShowingCamera = ! isShowingCamera;
 }
 
 #pragma mark - Media browser
@@ -81,7 +90,7 @@
     mediaUI.delegate = delegate;
     mediaUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
     mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    [controller presentModalViewController:mediaUI animated:YES];
+    [self presentViewController:mediaUI animated:YES completion:nil];
     return YES;
 }
 

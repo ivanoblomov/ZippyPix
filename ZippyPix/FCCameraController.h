@@ -9,6 +9,8 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <UIKit/UIKit.h>
 
-@interface FCCameraController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FCCameraController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    BOOL isShowingCamera;
+}
 
 @end
