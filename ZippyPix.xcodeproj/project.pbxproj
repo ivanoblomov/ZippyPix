@@ -25,6 +25,10 @@
 		9C1A478016427FE000572102 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A477E16427FE000572102 /* InfoPlist.strings */; };
 		9C1A478316427FE000572102 /* ZippyPixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A478216427FE000572102 /* ZippyPixTests.m */; };
 		9CA892B61646CB6D00E802CD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */; };
+		9CA892D51648243F00E802CD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892D41648243F00E802CD /* AssetsLibrary.framework */; };
+		9CA892D81648244800E802CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892D71648244800E802CD /* CoreLocation.framework */; };
+		9CA892DA1648245500E802CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892D91648245500E802CD /* SystemConfiguration.framework */; };
+		9CA892DE164824BF00E802CD /* libQuickPrintSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892DD164824BF00E802CD /* libQuickPrintSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,12 @@
 		9C1A478116427FE000572102 /* ZippyPixTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZippyPixTests.h; sourceTree = "<group>"; };
 		9C1A478216427FE000572102 /* ZippyPixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZippyPixTests.m; sourceTree = "<group>"; };
 		9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9CA892D41648243F00E802CD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9CA892D71648244800E802CD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9CA892D91648245500E802CD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9CA892DB164824A900E802CD /* WAG_CheckoutContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAG_CheckoutContext.h; sourceTree = "<group>"; };
+		9CA892DC164824A900E802CD /* WAG_ImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAG_ImageData.h; sourceTree = "<group>"; };
+		9CA892DD164824BF00E802CD /* libQuickPrintSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQuickPrintSDK.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +79,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA892D51648243F00E802CD /* AssetsLibrary.framework in Frameworks */,
 				9C1A475316427FE000572102 /* CoreGraphics.framework in Frameworks */,
+				9CA892D81648244800E802CD /* CoreLocation.framework in Frameworks */,
 				9C1A475116427FE000572102 /* Foundation.framework in Frameworks */,
 				9CA892B61646CB6D00E802CD /* MobileCoreServices.framework in Frameworks */,
+				9CA892DA1648245500E802CD /* SystemConfiguration.framework in Frameworks */,
 				9C1A474F16427FE000572102 /* UIKit.framework in Frameworks */,
+				9CA892DE164824BF00E802CD /* libQuickPrintSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,10 +125,13 @@
 		9C1A474D16427FE000572102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CA892D41648243F00E802CD /* AssetsLibrary.framework */,
 				9C1A475216427FE000572102 /* CoreGraphics.framework */,
+				9CA892D71648244800E802CD /* CoreLocation.framework */,
 				9C1A475016427FE000572102 /* Foundation.framework */,
 				9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */,
 				9C1A477516427FE000572102 /* SenTestingKit.framework */,
+				9CA892D91648245500E802CD /* SystemConfiguration.framework */,
 				9C1A474E16427FE000572102 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -129,6 +146,8 @@
 				9C1A476916427FE000572102 /* MainStoryboard_iPad.storyboard */,
 				9C1A476C16427FE000572102 /* FCCameraController.h */,
 				9C1A476D16427FE000572102 /* FCCameraController.m */,
+				9CA892DB164824A900E802CD /* WAG_CheckoutContext.h */,
+				9CA892DC164824A900E802CD /* WAG_ImageData.h */,
 				9C1A475516427FE000572102 /* Supporting Files */,
 			);
 			path = ZippyPix;
@@ -137,13 +156,14 @@
 		9C1A475516427FE000572102 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C1A475616427FE000572102 /* ZippyPix-Info.plist */,
-				9C1A475716427FE000572102 /* InfoPlist.strings */,
-				9C1A475A16427FE000572102 /* main.m */,
-				9C1A475C16427FE000572102 /* ZippyPix-Prefix.pch */,
 				9C1A476016427FE000572102 /* Default.png */,
 				9C1A476216427FE000572102 /* Default@2x.png */,
 				9C1A476416427FE000572102 /* Default-568h@2x.png */,
+				9C1A475716427FE000572102 /* InfoPlist.strings */,
+				9CA892DD164824BF00E802CD /* libQuickPrintSDK.a */,
+				9C1A475A16427FE000572102 /* main.m */,
+				9C1A475616427FE000572102 /* ZippyPix-Info.plist */,
+				9C1A475C16427FE000572102 /* ZippyPix-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -396,6 +416,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZippyPix/ZippyPix-Prefix.pch";
 				INFOPLIST_FILE = "ZippyPix/ZippyPix-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ZippyPix\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -407,6 +431,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZippyPix/ZippyPix-Prefix.pch";
 				INFOPLIST_FILE = "ZippyPix/ZippyPix-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ZippyPix\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

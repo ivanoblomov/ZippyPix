@@ -8,8 +8,9 @@
 
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <UIKit/UIKit.h>
+#import "WAG_CheckoutContext.h"
 
-@interface FCCameraController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface FCCameraController : UIViewController <CheckoutDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     BOOL isShowingCamera;
 }
 
