@@ -9,6 +9,6 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <UIKit/UIKit.h>
 
-@interface FCViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FCCameraController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end

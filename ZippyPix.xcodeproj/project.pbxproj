@@ -18,7 +18,7 @@
 		9C1A476516427FE000572102 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A476416427FE000572102 /* Default-568h@2x.png */; };
 		9C1A476816427FE000572102 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A476616427FE000572102 /* MainStoryboard_iPhone.storyboard */; };
 		9C1A476B16427FE000572102 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A476916427FE000572102 /* MainStoryboard_iPad.storyboard */; };
-		9C1A476E16427FE000572102 /* FCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A476D16427FE000572102 /* FCViewController.m */; };
+		9C1A476E16427FE000572102 /* FCCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A476D16427FE000572102 /* FCCameraController.m */; };
 		9C1A477616427FE000572102 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A477516427FE000572102 /* SenTestingKit.framework */; };
 		9C1A477716427FE000572102 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A474E16427FE000572102 /* UIKit.framework */; };
 		9C1A477816427FE000572102 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A475016427FE000572102 /* Foundation.framework */; };
@@ -53,8 +53,8 @@
 		9C1A476416427FE000572102 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C1A476716427FE000572102 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		9C1A476A16427FE000572102 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		9C1A476C16427FE000572102 /* FCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCViewController.h; sourceTree = "<group>"; };
-		9C1A476D16427FE000572102 /* FCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCViewController.m; sourceTree = "<group>"; };
+		9C1A476C16427FE000572102 /* FCCameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCameraController.h; sourceTree = "<group>"; };
+		9C1A476D16427FE000572102 /* FCCameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCCameraController.m; sourceTree = "<group>"; };
 		9C1A477416427FE000572102 /* ZippyPixTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZippyPixTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1A477516427FE000572102 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9C1A477D16427FE000572102 /* ZippyPixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZippyPixTests-Info.plist"; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 				9C1A475E16427FE000572102 /* FCAppDelegate.m */,
 				9C1A476616427FE000572102 /* MainStoryboard_iPhone.storyboard */,
 				9C1A476916427FE000572102 /* MainStoryboard_iPad.storyboard */,
-				9C1A476C16427FE000572102 /* FCViewController.h */,
-				9C1A476D16427FE000572102 /* FCViewController.m */,
+				9C1A476C16427FE000572102 /* FCCameraController.h */,
+				9C1A476D16427FE000572102 /* FCCameraController.m */,
 				9C1A475516427FE000572102 /* Supporting Files */,
 			);
 			path = ZippyPix;
@@ -281,7 +281,7 @@
 			files = (
 				9C1A475B16427FE000572102 /* main.m in Sources */,
 				9C1A475F16427FE000572102 /* FCAppDelegate.m in Sources */,
-				9C1A476E16427FE000572102 /* FCViewController.m in Sources */,
+				9C1A476E16427FE000572102 /* FCCameraController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

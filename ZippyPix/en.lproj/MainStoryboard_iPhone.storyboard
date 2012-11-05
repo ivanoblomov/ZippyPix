@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="2" customClass="FCViewController" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="2" customClass="FCCameraController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,8 +31,8 @@
         <image name="Default-568h@2x.png" width="640" height="1136"/>
     </resources>
     <classes>
-        <class className="FCViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FCViewController.h"/>
+        <class className="FCCameraController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FCCameraController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

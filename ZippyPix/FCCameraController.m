@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Roderick Monje. All rights reserved.
 //
 
-#import "FCViewController.h"
+#import "FCCameraController.h"
 
-@interface FCViewController ()
+@interface FCCameraController ()
 
 @end
 
-@implementation FCViewController
+@implementation FCCameraController
 
 #pragma mark - Camera
 
@@ -55,11 +55,34 @@
             UISaveVideoAtPathToSavedPhotosAlbum(moviePath, nil, nil, nil);
     }
 
-    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    [self showSavedMediaBrowser];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    [self showSavedMediaBrowser];
+}
+
+#pragma mark - Media browser
+
+- (IBAction)showSavedMediaBrowser {
+    [self startMediaBrowserFromViewController:self usingDelegate:self];
+}
+
+- (BOOL)startMediaBrowserFromViewController:(UIViewController*) controller
+               usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
+
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)
+            || (delegate == nil)
+            || (controller == nil))
+        return NO;
+
+    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
+    mediaUI.allowsEditing = NO;
+    mediaUI.delegate = delegate;
+    mediaUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+    mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    [controller presentModalViewController:mediaUI animated:YES];
+    return YES;
 }
 
 #pragma mark - View lifecycle
