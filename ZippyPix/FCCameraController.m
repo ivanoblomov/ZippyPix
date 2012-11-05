@@ -55,11 +55,11 @@
             UISaveVideoAtPathToSavedPhotosAlbum(moviePath, nil, nil, nil);
     }
 
-    [self showSavedMediaBrowser];
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self showSavedMediaBrowser];
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - Media browser
