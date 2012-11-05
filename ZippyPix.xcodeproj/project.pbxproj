@@ -92,7 +92,6 @@
 		9C1A473F16427FE000572102 = {
 			isa = PBXGroup;
 			children = (
-				9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */,
 				9C1A475416427FE000572102 /* ZippyPix */,
 				9C1A477B16427FE000572102 /* ZippyPixTests */,
 				9C1A474D16427FE000572102 /* Frameworks */,
@@ -112,10 +111,11 @@
 		9C1A474D16427FE000572102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C1A474E16427FE000572102 /* UIKit.framework */,
-				9C1A475016427FE000572102 /* Foundation.framework */,
 				9C1A475216427FE000572102 /* CoreGraphics.framework */,
+				9C1A475016427FE000572102 /* Foundation.framework */,
+				9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */,
 				9C1A477516427FE000572102 /* SenTestingKit.framework */,
+				9C1A474E16427FE000572102 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
