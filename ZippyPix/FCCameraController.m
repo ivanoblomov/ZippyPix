@@ -22,44 +22,28 @@
 
 - (BOOL)startCameraControllerFromViewController:(UIViewController*)controller
                                    usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
-    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO)
-        || (delegate == nil)
-        || (controller == nil))
-        return NO;
     UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
     cameraUI.allowsEditing = NO;
     cameraUI.delegate = delegate;
-    cameraUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    cameraUI.sourceType = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
+    cameraUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:cameraUI.sourceType];
     [controller presentModalViewController:cameraUI animated:NO];
-    isShowingCamera = YES;
+    isShowingCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
     return YES;
 }
 
 #pragma mark - Image picker
 
-- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    UIImage *originalImage, *editedImage;
-
-    // Handle still image
-    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
-        editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
-        originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
-        UIImageWriteToSavedPhotosAlbum ((editedImage) ? editedImage : originalImage, nil, nil , nil);
-    }
-
-    // Handle movie
-    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
-        NSString *moviePath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
-        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath))
-            UISaveVideoAtPathToSavedPhotosAlbum(moviePath, nil, nil, nil);
-    }
-
-    [picker dismissModalViewControllerAnimated:YES];
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    FCPhotoController *pvc = (FCPhotoController *) [[UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle: nil] instantiateViewControllerWithIdentifier: @"photoController"];
+    pvc.mediaInfo = info;
+    [picker pushViewController:pvc animated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    if (! [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        return;
+
     if (isShowingCamera) {
         picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;

@@ -24,6 +24,9 @@
 		9C1A477816427FE000572102 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A475016427FE000572102 /* Foundation.framework */; };
 		9C1A478016427FE000572102 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A477E16427FE000572102 /* InfoPlist.strings */; };
 		9C1A478316427FE000572102 /* ZippyPixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A478216427FE000572102 /* ZippyPixTests.m */; };
+		9C237B36164AF2F500EA9CE7 /* FCPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C237B35164AF2F500EA9CE7 /* FCPhotoController.m */; };
+		9C237B3A164AFA0800EA9CE7 /* walgreens.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C237B38164AFA0800EA9CE7 /* walgreens.png */; };
+		9C237B3B164AFA0800EA9CE7 /* walgreens@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C237B39164AFA0800EA9CE7 /* walgreens@2x.png */; };
 		9CA892B61646CB6D00E802CD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */; };
 		9CA892D51648243F00E802CD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892D41648243F00E802CD /* AssetsLibrary.framework */; };
 		9CA892D81648244800E802CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA892D71648244800E802CD /* CoreLocation.framework */; };
@@ -65,6 +68,10 @@
 		9C1A477F16427FE000572102 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C1A478116427FE000572102 /* ZippyPixTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZippyPixTests.h; sourceTree = "<group>"; };
 		9C1A478216427FE000572102 /* ZippyPixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZippyPixTests.m; sourceTree = "<group>"; };
+		9C237B34164AF2F500EA9CE7 /* FCPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCPhotoController.h; sourceTree = "<group>"; };
+		9C237B35164AF2F500EA9CE7 /* FCPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCPhotoController.m; sourceTree = "<group>"; };
+		9C237B38164AFA0800EA9CE7 /* walgreens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walgreens.png; sourceTree = "<group>"; };
+		9C237B39164AFA0800EA9CE7 /* walgreens@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walgreens@2x.png"; sourceTree = "<group>"; };
 		9CA892B51646CB6D00E802CD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9CA892D41648243F00E802CD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		9CA892D71648244800E802CD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -146,6 +153,8 @@
 				9C1A476916427FE000572102 /* MainStoryboard_iPad.storyboard */,
 				9C1A476C16427FE000572102 /* FCCameraController.h */,
 				9C1A476D16427FE000572102 /* FCCameraController.m */,
+				9C237B34164AF2F500EA9CE7 /* FCPhotoController.h */,
+				9C237B35164AF2F500EA9CE7 /* FCPhotoController.m */,
 				9CA892DB164824A900E802CD /* WAG_CheckoutContext.h */,
 				9CA892DC164824A900E802CD /* WAG_ImageData.h */,
 				9C1A475516427FE000572102 /* Supporting Files */,
@@ -162,6 +171,8 @@
 				9C1A475716427FE000572102 /* InfoPlist.strings */,
 				9CA892DD164824BF00E802CD /* libQuickPrintSDK.a */,
 				9C1A475A16427FE000572102 /* main.m */,
+				9C237B38164AFA0800EA9CE7 /* walgreens.png */,
+				9C237B39164AFA0800EA9CE7 /* walgreens@2x.png */,
 				9C1A475616427FE000572102 /* ZippyPix-Info.plist */,
 				9C1A475C16427FE000572102 /* ZippyPix-Prefix.pch */,
 			);
@@ -265,6 +276,8 @@
 				9C1A476516427FE000572102 /* Default-568h@2x.png in Resources */,
 				9C1A476816427FE000572102 /* MainStoryboard_iPhone.storyboard in Resources */,
 				9C1A476B16427FE000572102 /* MainStoryboard_iPad.storyboard in Resources */,
+				9C237B3A164AFA0800EA9CE7 /* walgreens.png in Resources */,
+				9C237B3B164AFA0800EA9CE7 /* walgreens@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +315,7 @@
 				9C1A475B16427FE000572102 /* main.m in Sources */,
 				9C1A475F16427FE000572102 /* FCAppDelegate.m in Sources */,
 				9C1A476E16427FE000572102 /* FCCameraController.m in Sources */,
+				9C237B36164AF2F500EA9CE7 /* FCPhotoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
