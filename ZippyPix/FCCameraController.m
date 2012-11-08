@@ -58,29 +58,6 @@
     isShowingCamera = ! isShowingCamera;
 }
 
-#pragma mark - Media browser
-
-- (IBAction)showSavedMediaBrowser {
-    [self startMediaBrowserFromViewController:self usingDelegate:self];
-}
-
-- (BOOL)startMediaBrowserFromViewController:(UIViewController*) controller
-               usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
-
-    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)
-            || (delegate == nil)
-            || (controller == nil))
-        return NO;
-
-    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
-    mediaUI.allowsEditing = NO;
-    mediaUI.delegate = delegate;
-    mediaUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-    mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    [self presentViewController:mediaUI animated:YES completion:nil];
-    return YES;
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidAppear:(BOOL)animated {

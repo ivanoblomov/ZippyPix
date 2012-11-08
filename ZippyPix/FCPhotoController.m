@@ -59,9 +59,6 @@
     [self walgreensCheckout];
     [[self photoImageView] addGestureRecognizer:[self tapRecognizer]];
     [[self tapRecognizer] setDelegate:self];
-#ifdef DEBUG
-    [self showSaveItem];
-#endif
 }
 
 - (void)viewDidUnload
@@ -117,26 +114,6 @@
     NSLog(@"Failed to connect to Walgreens with error: %@", error.localizedDescription);
 }
 
-- (CGImageRef)newFormattedPhoto {
-    CGImageRef photo = [[self photoImageView] image].CGImage;
-    CGContextRef context = CGBitmapContextCreate(NULL, 1200, 1800,
-                                                 CGImageGetBitsPerComponent(photo),
-                                                 CGImageGetWidth(photo) * CGImageGetBitsPerPixel(photo),
-                                                 CGImageGetColorSpace(photo),
-                                                 CGImageGetBitmapInfo(photo));
-    CGContextSetRGBFillColor(context, 1., 1., 1., 1);
-    CGContextFillRect(context, CGRectMake(0, 0, 1200, 1800));
-    CGLayerRef photoLayer = CGLayerCreateWithContext(context, CGRectMake(0, 0, 600, 600).size, NULL);
-    CGContextRef layerContext = CGLayerGetContext(photoLayer);
-    CGContextDrawImage(layerContext, CGRectMake(0, 0, 600, 600), photo);
-    CGContextDrawLayerAtPoint(context, CGPointMake(600, 150), photoLayer);
-    CGContextDrawLayerAtPoint(context, CGPointMake(600, 1050), photoLayer);
-    CGImageRef photoRef = CGBitmapContextCreateImage(context);
-    CGLayerRelease(photoLayer);
-    CGContextRelease(context);
-    return photoRef;
-}
-
 - (void)getUploadProgress:(float)progress {
     [[self progressView] setHidden:NO];
     [[self progressView] setProgress:progress];
@@ -159,35 +136,9 @@
 - (IBAction)printToWalgreens:(id)sender {
     [[self cameraItem] setEnabled:NO];
     [[self walgreensItem] setEnabled:NO];
-    CGImageRef photoRef = [self newFormattedPhoto];
-    [[self walgreensCheckout] upload:UIImageJPEGRepresentation([UIImage imageWithCGImage:photoRef], 1.0)];
-    CGImageRelease(photoRef);
-}
-#ifdef DEBUG
-- (void)saveFormattedImage {
-    CGImageRef photoRef = [self newFormattedPhoto];
-    ALAssetsLibraryWriteImageCompletionBlock completionBlock = ^(NSURL *assetURL, NSError *error) {
-        CGImageRelease(photoRef);
-        [[self parentViewController] dismissModalViewControllerAnimated:YES];
-        if (error)
-            NSLog(@"Error writing to camera roll: %@", error.localizedDescription);
-    };
-    [[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:photoRef
-                                                     orientation:(ALAssetOrientation)[[[self photoImageView] image] imageOrientation]
-                                                 completionBlock:completionBlock];
+    [[self walgreensCheckout] upload:[[self photoImageView] image]];
 }
 
-- (void)showSaveItem {
-    NSMutableArray *toolbarItems = [NSMutableArray arrayWithCapacity:3];
-    [toolbarItems addObject:[[[self toolbar] items] objectAtIndex:0]];
-    [toolbarItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(saveFormattedImage)]];
-    UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveFormattedImage)];
-    [saveItem setTintColor:[UIColor groupTableViewBackgroundColor]];
-    [toolbarItems addObject:saveItem];
-    [toolbarItems addObject:[[[self toolbar] items] lastObject]];
-    [[self toolbar] setItems:toolbarItems];
-}
-#endif
 - (WAG_CheckoutContext *)walgreensCheckout {
     if (! _walgreensCheckout) {
         _walgreensCheckout = [[WAG_CheckoutContext alloc] initWithAffliateId:FCWalgreensAffiliateID
