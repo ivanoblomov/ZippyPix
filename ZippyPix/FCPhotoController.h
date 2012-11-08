@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WAG_CheckoutContext.h"
 
-#define FCWalgreensAffiliateID @"passportpx"
+#define FCWalgreensAffiliateID @"extest1"
 #define FCWalgreensAPIKey @"c71dcd5d741fed1ac3f5bb300eff48c2"
 #define FCWalgreensEnvironment 0
 #define FCWalgreensProductGroupID @""
