@@ -42,28 +42,17 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     if (! [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         return;
-
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
-
-    if (isShowingCamera) {
-        picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    } else {
-        picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-
+    picker.sourceType = (isShowingCamera) ? UIImagePickerControllerSourceTypePhotoLibrary : UIImagePickerControllerSourceTypeCamera;
+    picker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
     isShowingCamera = ! isShowingCamera;
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidAppear:(BOOL)animated {
-<<<<<<< HEAD
-=======
     [super viewDidAppear:animated];
->>>>>>> launch-image transition is seamless: no flash, no status bar
     [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
