@@ -136,7 +136,7 @@
 - (IBAction)printToWalgreens:(id)sender {
     [[self cameraItem] setEnabled:NO];
     [[self walgreensItem] setEnabled:NO];
-    [[self walgreensCheckout] upload:[[self photoImageView] image]];
+    [[self walgreensCheckout] upload:UIImageJPEGRepresentation([[self photoImageView] image], 1.0)];
 }
 
 - (WAG_CheckoutContext *)walgreensCheckout {

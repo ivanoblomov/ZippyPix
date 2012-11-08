@@ -10,7 +10,7 @@
 #import "WAG_CheckoutContext.h"
 
 #define FCWalgreensAffiliateID @"extest1"
-#define FCWalgreensAPIKey @"c71dcd5d741fed1ac3f5bb300eff48c2"
+#define FCWalgreensAPIKey @"9468e9a3078b1708e44343caec5231dc"
 #define FCWalgreensEnvironment 0
 #define FCWalgreensProductGroupID @""
 #define FCWalgreensPublisherID @"5981781"
