@@ -28,9 +28,9 @@
 @property (strong, nonatomic) IBOutlet UITextView *printWarningTextView;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) IBOutlet UIWebView *aWebView;
+@property (strong, nonatomic) NSDictionary *mediaInfo;
+@property (strong, nonatomic) NSURL *selectedImageURL;
 @property (strong, nonatomic) WAG_CheckoutContext *walgreensCheckout;
-@property (weak, nonatomic) NSDictionary *mediaInfo;
-@property (weak, nonatomic) NSURL *selectedImageURL;
 
 - (IBAction)printToWalgreens:(id)sender;
 - (IBAction)showCamera:(id)sender;
