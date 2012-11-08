@@ -58,6 +58,10 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidAppear:(BOOL)animated {
+<<<<<<< HEAD
+=======
+    [super viewDidAppear:animated];
+>>>>>>> launch-image transition is seamless: no flash, no status bar
     [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
