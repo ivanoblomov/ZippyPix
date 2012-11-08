@@ -14,4 +14,6 @@
     BOOL isShowingCamera;
 }
 
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+
 @end

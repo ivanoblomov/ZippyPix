@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Roderick Monje. All rights reserved.
 //
 
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #import "FCCameraController.h"
 
 @interface FCCameraController ()
@@ -15,10 +16,6 @@
 @implementation FCCameraController
 
 #pragma mark - Camera
-
-- (IBAction)showCameraUI {
-    [self startCameraControllerFromViewController:self usingDelegate:self];
-}
 
 - (BOOL)startCameraControllerFromViewController:(UIViewController*)controller
                                    usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
@@ -61,15 +58,21 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self showCameraUI];
+    [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (! IS_WIDESCREEN)
+        [self backgroundImage].image = [UIImage imageNamed:@"Default.png"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewDidUnload {
+    [self setBackgroundImage:nil];
+    [super viewDidUnload];
+}
 @end
