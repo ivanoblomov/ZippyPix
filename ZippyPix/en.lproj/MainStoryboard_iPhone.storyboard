@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -12,14 +12,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Default-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rmp-DG-A1u"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Default-568h@2x.png" id="Rmp-DG-A1u">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="Rmp-DG-A1u" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="EHP-4B-dFx"/>
-                            <constraint firstItem="Rmp-DG-A1u" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="IaX-et-dqb"/>
-                            <constraint firstItem="Rmp-DG-A1u" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="cEk-Ni-4jp"/>
-                            <constraint firstItem="Rmp-DG-A1u" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="s4K-Nq-bpZ"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
@@ -34,8 +30,11 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="YWr-Je-A24"/>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="rEb-uX-zj9">
+                            <imageView contentMode="scaleAspectFit" id="YWr-Je-A24">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="rEb-uX-zj9">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="ecH-gY-Lt7">
                                         <connections>
@@ -62,44 +61,24 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDz-s4-6ef">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="O3h-rE-Yig"/>
-                                </constraints>
+                            <textView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="FDz-s4-6ef">
+                                <rect key="frame" x="20" y="20" width="280" height="150"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dfU-BI-Eo1"/>
-                            <progressView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Yt0-6g-8uq"/>
-                            <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZkQ-bv-z42">
+                            <activityIndicatorView hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="dfU-BI-Eo1">
+                                <rect key="frame" x="142" y="255" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <progressView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" progress="0.5" id="Yt0-6g-8uq">
+                                <rect key="frame" x="20" y="480" width="280" height="9"/>
+                            </progressView>
+                            <webView hidden="YES" contentMode="scaleToFill" id="ZkQ-bv-z42">
+                                <rect key="frame" x="-7" y="0.0" width="327" height="548"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="327" id="3fr-mb-OCI"/>
-                                </constraints>
                             </webView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="FDz-s4-6ef" firstAttribute="top" secondItem="h75-ts-IZG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4zp-Xc-QmA"/>
-                            <constraint firstItem="Yt0-6g-8uq" firstAttribute="centerX" secondItem="dfU-BI-Eo1" secondAttribute="centerX" type="default" id="879-uZ-hLz"/>
-                            <constraint firstItem="YWr-Je-A24" firstAttribute="top" secondItem="h75-ts-IZG" secondAttribute="top" type="default" id="9DF-7c-r2A"/>
-                            <constraint firstItem="YWr-Je-A24" firstAttribute="leading" secondItem="h75-ts-IZG" secondAttribute="leading" type="default" id="DRA-MA-JL0"/>
-                            <constraint firstItem="FDz-s4-6ef" firstAttribute="leading" secondItem="h75-ts-IZG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Emy-Tm-fw4"/>
-                            <constraint firstItem="rEb-uX-zj9" firstAttribute="bottom" secondItem="h75-ts-IZG" secondAttribute="bottom" type="default" id="LhZ-76-aCY"/>
-                            <constraint firstItem="YWr-Je-A24" firstAttribute="trailing" secondItem="h75-ts-IZG" secondAttribute="trailing" type="default" id="MXG-BX-Afg"/>
-                            <constraint firstItem="ZkQ-bv-z42" firstAttribute="top" secondItem="h75-ts-IZG" secondAttribute="top" type="default" id="O8i-cZ-QS2"/>
-                            <constraint firstAttribute="trailing" secondItem="FDz-s4-6ef" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UTc-Ze-kZe"/>
-                            <constraint firstItem="ZkQ-bv-z42" firstAttribute="bottom" secondItem="h75-ts-IZG" secondAttribute="bottom" type="default" id="VvG-sM-Fye"/>
-                            <constraint firstItem="rEb-uX-zj9" firstAttribute="trailing" secondItem="h75-ts-IZG" secondAttribute="trailing" type="default" id="YPm-of-0m5"/>
-                            <constraint firstItem="Yt0-6g-8uq" firstAttribute="leading" secondItem="h75-ts-IZG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aUN-Ko-Hht"/>
-                            <constraint firstAttribute="bottom" secondItem="Yt0-6g-8uq" secondAttribute="bottom" constant="59" id="cSS-2K-w6P"/>
-                            <constraint firstItem="ZkQ-bv-z42" firstAttribute="trailing" secondItem="h75-ts-IZG" secondAttribute="trailing" type="default" id="cdk-oh-e2E"/>
-                            <constraint firstItem="rEb-uX-zj9" firstAttribute="leading" secondItem="h75-ts-IZG" secondAttribute="leading" type="default" id="f6l-CM-Yc4"/>
-                            <constraint firstItem="YWr-Je-A24" firstAttribute="bottom" secondItem="h75-ts-IZG" secondAttribute="bottom" type="default" id="pFg-L4-ADp"/>
-                            <constraint firstAttribute="trailing" secondItem="Yt0-6g-8uq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qzz-YP-oqG"/>
-                            <constraint firstItem="dfU-BI-Eo1" firstAttribute="top" secondItem="h75-ts-IZG" secondAttribute="top" constant="255" id="tMC-yM-xOb"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="aWebView" destination="ZkQ-bv-z42" id="q20-aR-kr2"/>
@@ -121,7 +100,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-51" y="769"/>
+            <point key="canvasLocation" x="518" y="-3"/>
         </scene>
     </scenes>
     <resources>
@@ -148,9 +127,6 @@
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="walgreensItem" candidateClass="UIBarButtonItem"/>
             </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
