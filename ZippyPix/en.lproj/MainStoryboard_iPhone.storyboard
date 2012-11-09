@@ -64,12 +64,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="FDz-s4-6ef">
-                                <rect key="frame" x="20" y="20" width="280" height="150"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <activityIndicatorView hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="dfU-BI-Eo1">
                                 <rect key="frame" x="142" y="255" width="37" height="37"/>
                             </activityIndicatorView>
@@ -88,7 +82,6 @@
                         <outlet property="activityIndicatorView" destination="dfU-BI-Eo1" id="JRL-cE-L4p"/>
                         <outlet property="cameraItem" destination="ecH-gY-Lt7" id="GCD-rE-oUQ"/>
                         <outlet property="photoImageView" destination="YWr-Je-A24" id="eIY-68-yQF"/>
-                        <outlet property="printWarningTextView" destination="FDz-s4-6ef" id="K14-z9-e9R"/>
                         <outlet property="progressView" destination="Yt0-6g-8uq" id="vTs-ib-V0t"/>
                         <outlet property="tapRecognizer" destination="Tgr-SJ-Eeh" id="Hxe-8z-OpP"/>
                         <outlet property="toolbar" destination="rEb-uX-zj9" id="z8s-eb-jIl"/>
@@ -124,7 +117,6 @@
                 <relationship kind="outlet" name="activityIndicatorView" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="cameraItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="printWarningTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="progressView" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="tapRecognizer" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>

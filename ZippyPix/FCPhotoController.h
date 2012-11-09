@@ -25,7 +25,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressView;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
-@property (strong, nonatomic) IBOutlet UITextView *printWarningTextView;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) IBOutlet UIWebView *aWebView;
 @property (strong, nonatomic) NSDictionary *mediaInfo;

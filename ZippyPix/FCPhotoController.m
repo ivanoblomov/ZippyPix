@@ -15,7 +15,6 @@
 @synthesize cameraItem = _cameraItem;
 @synthesize mediaInfo = _mediaInfo;
 @synthesize photoImageView = _photoImageView;
-@synthesize printWarningTextView = _printWarningTextView;
 @synthesize progressView = _progressView;
 @synthesize selectedImageURL = _selectedImageURL;
 @synthesize tapRecognizer = _tapRecognizer;
@@ -69,7 +68,6 @@
     [self setCameraItem:nil];
     [self setMediaInfo:nil];
     [self setPhotoImageView:nil];
-    [self setPrintWarningTextView:nil];
     [self setProgressView:nil];
     [self setSelectedImageURL:nil];
     [self setTapRecognizer:nil];
