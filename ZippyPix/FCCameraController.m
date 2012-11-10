@@ -17,6 +17,10 @@
 
 #pragma mark - Camera
 
+- (NSString *)deviceModel {
+    return [[UIDevice currentDevice] model];
+}
+
 - (BOOL)startCameraControllerFromViewController:(UIViewController*)controller
                                    usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
     UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
@@ -34,7 +38,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     if (isShowingCamera)
         UIImageWriteToSavedPhotosAlbum([info objectForKey:UIImagePickerControllerOriginalImage], nil, nil , nil);
-    FCPhotoController *pvc = (FCPhotoController *) [[UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle: nil] instantiateViewControllerWithIdentifier: @"photoController"];
+    FCPhotoController *pvc = (FCPhotoController *) [[UIStoryboard storyboardWithName:[@"MainStoryboard_" stringByAppendingString:[self deviceModel]] bundle: nil] instantiateViewControllerWithIdentifier: @"photoController"];
     pvc.mediaInfo = info;
     [picker pushViewController:pvc animated:YES];
 }
