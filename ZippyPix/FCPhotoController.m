@@ -10,18 +10,6 @@
 
 @implementation FCPhotoController
 
-@synthesize activityIndicatorView = _activityIndicatorView;
-@synthesize aWebView = _aWebView;
-@synthesize cameraItem = _cameraItem;
-@synthesize mediaInfo = _mediaInfo;
-@synthesize photoImageView = _photoImageView;
-@synthesize progressView = _progressView;
-@synthesize selectedImageURL = _selectedImageURL;
-@synthesize tapRecognizer = _tapRecognizer;
-@synthesize toolbar = _toolbar;
-@synthesize walgreensCheckout = _walgreensCheckout;
-@synthesize walgreensItem = _walgreensItem;
-
 #pragma mark - Main
 
 - (void)showError:(NSString *)title withMessage:(NSString *)message {
