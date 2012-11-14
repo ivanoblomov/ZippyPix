@@ -114,6 +114,7 @@
 
 - (void)initErrorResponse:(NSString *)response {
     NSLog(@"Failed to connect to Walgreens with response %@!", response);
+    [[self walgreensItem] setEnabled:NO];
 }
 
 - (void)initSuccessResponse:(NSString*)response {
